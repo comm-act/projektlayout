@@ -1,0 +1,8 @@
+bootstrap.navbar {
+    #image.defaultPath = /typo3conf/ext/t3sbootstrap/Resources/Public/Images/bootstrap-logo-white.svg
+    image.width = 199
+    image.height = 88
+    image.altText = SCHWING Technologies
+    # (int+) default breakpoints - same like Bootstrap (used as condition for inlineJS e.g. navbar hover)
+
+}
