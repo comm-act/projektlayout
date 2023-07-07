@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{settings.navigation.navbar.right.uidList}">
+	<f:then>
+		<ul class="nav navbar-nav navbar-right">
+			<f:render section="search" />
+      
+			<f:render section="language" />
+			<f:cObject typoscriptObjectPath="lib.navigation.navbar-right" />
+		</ul>
+	</f:then>
+	<f:else>
+		<f:if condition="{settings.navigation.navbar.search.enable}">
+			<f:then>
+				<ul class="nav navbar-nav navbar-right">
+					<f:render section="search" />
+					<f:render section="contact" />
+					<f:render section="language" />                    
+				</ul>
+			</f:then>
+			<f:else>
+				<f:if condition="{settings.navigation.navbar_lang.enable}">
+					<f:if condition="{settings.navigation.navbar_lang.languages}">
+						<ul class="nav navbar-nav navbar-right">
+				    	<f:render section="contact" />
+							<f:render section="language" />
+						</ul>
+					</f:if>
+				</f:if>
+			</f:else>
+		</f:if>
+	</f:else>
+</f:if>
+</html>                                                                   
+
+
+<f:section name="language">                                                                                                                              
+<f:if condition="{settings.navigation.navbar_lang.enable}">
+	<f:if condition="{settings.navigation.navbar_lang.languages}">
+		<f:cObject typoscriptObjectPath="lib.navigation.languageswitch" />
+	</f:if>
+</f:if>
+</f:section>
+
+<f:section name="contact">
+	<li>
+		<f:link.email email="website@schwing-tech.com">
+			<span class="maillink"><i class="far fa-envelope"></i></span>
+		</f:link.email>
+	</li>
+</f:section>
+
+
+<f:section name="search">
+<f:if condition="{settings.navigation.navbar.search.enable}">
+	<f:if condition="{settings.navigation.navbar.search.link}">
+		<f:then>
+			<li>
+				<f:link.typolink parameter="{settings.search.targetPid}">
+					<span class="glyphicon glyphicon-search"></span>
+				</f:link.typolink>
+			</li>
+		</f:then>
+		<f:else>
+			<li class="dropdown">
+				<a id="searchbox" class="dropdown-toggle" href="#" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-search"></span>
+				</a>
+				<div class="dropdown-menu" style="padding: 0 15px; min-width: 260px;">
+<form method="get" id="form_kesearch_searchfield" name="form_kesearch_searchfield" action="{f:uri.page(pageUid: 547)}" class="navbar-form">
+  <input type="hidden" name="id" value="547" />
+  <input type="text" id="ke_search_searchfield_sword" name="tx_kesearch_pi1[sword]" placeholder="" />
+	<span class="input-group-btn">
+		<button id="ke_search_searchfield_submit" name="search[submitButton]" class="btn btn-default" type="submit">
+			<span class="glyphicon glyphicon-search tx-indexedsearch-searchbox-button"></span>
+		</button>
+	</span>
+</form>
+				</div>
+			</li>
+		</f:else>
+	</f:if>
+</f:if>
+</f:section>

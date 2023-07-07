@@ -1,0 +1,39 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Layout Extension",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-7.6.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": ""
+        },
+        "extensionKey": "projektlayout",
+        "name": "Projekt-Layout",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "imageFORMAT",
+                "email": "ralf.rene@image-format.eu",
+                "name": "Ralf-Ren\u00e9 Schr\u00f6der",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "ImF"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2016-08-22 01:34",
+        "extension_builder_version": "7.6.0",
+        "be_user": "Ralf-Ren\u00e9 Schr\u00f6der (2)"
+    }
+}

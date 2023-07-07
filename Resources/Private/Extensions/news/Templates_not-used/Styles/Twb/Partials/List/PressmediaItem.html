@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+ 
+<n:excludeDisplayedNews newsItem="{newsItem}" />  
+<div class="media article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}">
+
+	<div class="media-body">
+		<span class="newsinfo pull-right text-muted">
+			<small class="news-list-date">
+        <i class="fa-regular fa-calendar-days"></i>
+				<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+					<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+					<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
+				</time>
+			</small>
+    </span>
+		<h3 class="media-heading h5">
+
+				{newsItem.title}
+
+		</h3>
+        <n:removeMediaTags>
+  		<f:if condition="{newsItem.teaser}">
+  			<f:then>
+  				<f:format.html><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop></f:format.html>
+  			</f:then>
+  			<f:else>
+  				<f:format.html><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.bodytext}</f:format.crop></f:format.html>
+  			</f:else>
+  		</f:if>                                
+		<!-- Related links -->
+		<div class="news-related news-related-links">
+			<h4><f:translate key="related-links" /></h4>
+			<ul>
+				<f:for each="{newsItem.relatedLinks}" as="relatedLink">
+					<li>
+						<f:link.typolink parameter="{relatedLink.uri}" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}">{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}</f:link.typolink>
+						<f:if condition="{relatedLink.description}"><span>{relatedLink.description}</span>
+						</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</div>     
+        </n:removeMediaTags>
+	</div>
+</div>
+
+</html> 

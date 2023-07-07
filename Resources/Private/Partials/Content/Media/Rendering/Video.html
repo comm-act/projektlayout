@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:t3sb="http://typo3.org/ns/T3SBS/T3sbootstrap/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<f:if condition="{file.originalFile.properties.extension} == 'youtube'">
+		<f:then>
+			<iframe
+					data-cookieblock-src="https://www.youtube-nocookie.com/embed/{file.contents}?rel=0"
+					data-cookieconsent="marketing"
+					allowfullscreen=""
+			></iframe>
+			<f:comment><!--<iframe
+					data-cookieblock-src="https://www.youtube.com/embed/{file.contents}"
+					data-cookieconsent="marketing"
+					allowfullscreen=""
+			></iframe>--></f:comment>
+		</f:then>
+	</f:if>
+</html>

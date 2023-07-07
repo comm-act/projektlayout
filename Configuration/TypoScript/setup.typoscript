@@ -1,0 +1,76 @@
+#lib.contentElement.templateRootPaths.100 = EXT:projektlayout/Resources/Private/Extensions/FluidStyledContent/Templates/
+#lib.contentElement.layoutRootPaths.100 = EXT:projektlayout/Resources/Private/Extensions/FluidStyledContent/Layouts/
+
+@import 'EXT:projektlayout/Configuration/TypoScript/Lib/main.typoscript'
+
+page.includeCSS {
+#   projektlayout = EXT:projektlayout/Resources/Public/Styles/Layout.css
+#   projektlayout.excludeFromConcatenation = 1
+}
+
+config {  
+
+}
+
+#fix
+
+page.10.dataProcessing.30 >
+page.10.dataProcessing.99 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+page.10.dataProcessing.99 {
+    special = rootline
+    special.range = 0|-1
+    as = breadcrumb
+}
+###
+### cookiebot
+###
+
+page.headerData {
+    9 = TEXT
+    9.value(
+<script id="Cookiebot" data-culture="DE" src="https://consent.cookiebot.com/uc.js" data-cbid="5ddd8dc0-3f0c-4372-9859-68e74bbe2fe1" data-blockingmode="auto" type="text/javascript"></script>
+    )
+}
+
+
+[siteLanguage("languageId") == "1"]
+    page.headerData.9.value(
+<script id="Cookiebot" data-culture="EN" src="https://consent.cookiebot.com/uc.js" data-cbid="5ddd8dc0-3f0c-4372-9859-68e74bbe2fe1" data-blockingmode="auto" type="text/javascript"></script>
+    )
+[global]
+
+[siteLanguage("languageId") == "2"]
+    page.headerData.9.value(
+<script id="Cookiebot" data-culture="ES" src="https://consent.cookiebot.com/uc.js" data-cbid="5ddd8dc0-3f0c-4372-9859-68e74bbe2fe1" data-blockingmode="auto" type="text/javascript"></script>
+    )
+[global]
+
+[siteLanguage("languageId") == "4"]
+    page.headerData.9.value(
+<script id="Cookiebot" data-culture="ZH" src="https://consent.cookiebot.com/uc.js" data-cbid="5ddd8dc0-3f0c-4372-9859-68e74bbe2fe1" data-blockingmode="auto" type="text/javascript"></script>
+    )
+[global]
+
+plugin.tx_kesearch._LOCAL_LANG.es.searchbox_default_value = Término de busca
+plugin.tx_kesearch._LOCAL_LANG.es.reset_button = Borrar entrada
+plugin.tx_kesearch._LOCAL_LANG.es.submit = Encuentre
+plugin.tx_kesearch._LOCAL_LANG.es.num_results_plain = resultados
+plugin.tx_kesearch._LOCAL_LANG.es.num_results = %s resultados:
+plugin.tx_kesearch._LOCAL_LANG.es.no_results_found = No se han encontrado resultados
+plugin.tx_kesearch._LOCAL_LANG.es.results = Resultados de la búsqueda
+plugin.tx_kesearch._LOCAL_LANG.es.until = hasta
+plugin.tx_kesearch._LOCAL_LANG.es.of = de
+plugin.tx_kesearch._LOCAL_LANG.es.pagebrowser_next = siguiente
+plugin.tx_kesearch._LOCAL_LANG.es.pagebrowser_prev = anterior
+
+plugin.tx_kesearch._LOCAL_LANG.zh.searchbox_default_value = 关键词
+plugin.tx_kesearch._LOCAL_LANG.zh.reset_button = 删除条目
+plugin.tx_kesearch._LOCAL_LANG.zh.submit = 查找
+plugin.tx_kesearch._LOCAL_LANG.zh.num_results_plain = 结果
+plugin.tx_kesearch._LOCAL_LANG.zh.num_results = %s 结果:
+plugin.tx_kesearch._LOCAL_LANG.zh.no_results_found = 没有发现结果
+plugin.tx_kesearch._LOCAL_LANG.zh.results = 搜索结果
+plugin.tx_kesearch._LOCAL_LANG.zh.until = 直到
+plugin.tx_kesearch._LOCAL_LANG.zh.of = 的
+plugin.tx_kesearch._LOCAL_LANG.zh.pagebrowser_next = 下一个
+plugin.tx_kesearch._LOCAL_LANG.zh.pagebrowser_prev = 以前的

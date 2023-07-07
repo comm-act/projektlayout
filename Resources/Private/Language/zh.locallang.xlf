@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-05-29T16:32:45Z" product-name="projektlayout">
+		<header/>
+		<body>
+			<trans-unit id="cookiebot.video.0" approved="yes">
+				<source>Unfortunately, the videos embedded at this location cannot be viewed because the marketing cookies (YouTube) have been rejected. Please click</source>
+				<target>不幸的是，此时嵌入的视频无法观看，因为营销cookies（YouTube）已被拒绝。请点击</target>
+			</trans-unit>
+			<trans-unit id="cookiebot.video.1" approved="yes">
+				<source>here</source>
+				<target>这里</target>
+			</trans-unit>
+			<trans-unit id="cookiebot.video.2" approved="yes">
+				<source>to accept the required cookies and watch the videos!</source>
+				<target>，接受所需的cookies并观看视频!</target>
+			</trans-unit>
+			<trans-unit id="cookiebot.video.3" approved="yes">
+				<source>NOTE</source>
+				<target>注意事项</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

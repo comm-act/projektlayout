@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:format.raw>{jumbotron_variable}</f:format.raw>
+<f:if condition="{settings.styles.bsHeader.enable} == 1">
+  <f:then>
+  	<div class="header-container {f:if(condition: '{settings.styles.jumbotron.hidden.sm}',then: ' hidden-xs hidden-sm')}">
+  		<header>
+        <div class="logo-and-links">
+          <f:cObject typoscriptObjectPath="lib.general.logo" />
+          <f:cObject typoscriptObjectPath="lib.general.directlinks" />
+        </div>
+  			<div class="page-header testclass"><h1>{f:if(condition: '{data.tx_t3sbootstrap_fontawesome_icon}', then: '<i class="fa {data.tx_t3sbootstrap_fontawesome_icon}"></i> ')}{f:cObject(typoscriptObjectPath: 'lib.pageHeader')}</h1></div>
+      </header>
+  	</div>
+  </f:then>
+  <f:else>
+  	<div class="zzz header-container {f:if(condition: '{settings.styles.jumbotron.hidden.sm}',then: ' hidden-xs hidden-sm')}">
+      <header>
+
+      </header> 
+    </div> 
+  </f:else>      
+</f:if>
+</html>

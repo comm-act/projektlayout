@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/DateMenu.html
+-->
+
+<f:section name="content">
+<div id="submenu"> 
+	<ul class="nav flex-row nav-pills justify-content-start news-menu-view nav-pills nav-stacked twb menupages layout-2">     
+		<f:for each="{data.single}" key="year" as="count">
+			<f:if condition="{0:year} == {0:overwriteDemand.year}">
+				<f:then>
+					<li class="item itemactive active">
+				</f:then>
+				<f:else>
+					<li class="item">
+				</f:else>
+			</f:if>
+				<f:link.action action="list" pageUid="{listPid}" arguments="{overwriteDemand:{year: year}}">{year}</f:link.action>
+			</li>
+		</f:for>
+	</ul>
+</div>
+</f:section>
+</html>

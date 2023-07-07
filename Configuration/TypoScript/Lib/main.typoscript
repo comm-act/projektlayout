@@ -1,0 +1,68 @@
+lib.socialMediaAside = RECORDS
+lib.socialMediaAside {
+    stdWrap.wrap = <div id="social-share-area" class="mt-3">|</div>
+    source = 7369
+    dontCheckPid = 1
+    tables = tt_content
+}
+
+#-------------------------------------------------------------------------------
+#	NAVIGATION: Footer
+#-------------------------------------------------------------------------------
+lib.navigation.footer = COA
+lib.navigation.footer {
+	10 = HMENU
+	10 {
+ 		special = list
+ 		special.value = 530,566,309,1157
+
+ 		1 = TMENU
+ 		1 {
+ 			expAll = 1
+
+ 			NO = 1
+ 			NO {
+ 				wrapItemAndSub = <li>|</li>
+ 				stdWrap.htmlSpecialChars = 1
+ 			}
+ 		}
+ 	}
+ 	wrap = <ul class="nav nav-pills pull-right navbar-nav">|</ul>
+}
+
+lib.content.footernav = COA
+lib.content.footernav {
+    10 = TEXT
+    10.noTrimWrap = |<span class="footerlink copyright">| </span> |
+    10.value = SCHWING &copy;2022 &nbsp;
+    20 < lib.navigation.footer
+    30 = COA
+    30.stdWrap.noTrimWrap = |<span class="footerlink follow">| </span>|
+    30.5 = TEXT
+    30.5.noTrimWrap = || |
+    30.5.value = Follow us on &nbsp;
+    30.5.lang.de = Folgen Sie uns auf &nbsp;
+    30.5.lang.en = Follow us on &nbsp;
+    30.5.lang.es = Síganos en &nbsp;
+    30.5.lang.ru = Следуйте за нами &nbsp;
+    30.5.lang.zh = 请关注我们 &nbsp;
+    30.5.lang.ch = 请关注我们 &nbsp;
+    30.10 = TEXT
+    30.10.noTrimWrap = |<span class="followlink">|</span> &nbsp;|
+    30.10.value = <i title="LinkedIn" class="linkedin fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    30.10.typolink.parameter = https://www.linkedin.com/company/5394229/
+    30.10.typolink.extTarget = _blank
+    30.20 < .30.10
+    30.20.value = <i title="Facebook" class="facebook fab fa-facebook-square fa-lg" aria-hidden="true"></i>
+    30.20.typolink.parameter = https://www.facebook.com/schwing-technologies/
+    30.30 < .30.10
+    30.30.value = <i title="YouTube" class="youtube fab fa-youtube-square fa-lg" aria-hidden="true"></i>
+    30.30.typolink.parameter = https://www.youtube.com/user/ThermalCleaning/
+    30.40 < .30.10
+    30.40.value = <i title="Twitter" class="twitter fab fa-twitter-square fa-lg" aria-hidden="true"></i>
+    30.40.typolink.parameter = https://twitter.com/schwing_tech/
+}
+
+lib.content.footernav.10.outerWrap = <span class="footerlink copyright">|</span>
+lib.content.footernav.10.data = date:Y
+lib.content.footernav.10.noTrimWrap = |© | {$plugin.t3sbootstrap_configuration.general.copyright}|
