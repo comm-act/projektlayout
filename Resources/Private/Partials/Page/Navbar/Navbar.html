@@ -388,7 +388,7 @@
 							class="has-submenu dropdown-item dropdown-toggle dropdown-item-{child.data.uid}{child.activeClass}"
 							data-bs-toggle="{config.navbar.bstoggle}" aria-haspopup="true" aria-expanded="false"
 							{f:if(condition: child.current, then:' aria-current="page"')}>
-							<span><f:render section="Title" arguments="{item: child}" /></span>
+							<f:render section="Title" arguments="{item: child}" />
 						</a>
 					</f:else>
 				</f:if>
