@@ -73,7 +73,7 @@
 	</div>
 </f:section>
 
-<f:section name="Offcanvas">neu
+<f:section name="Offcanvas">
 <div id="navbarToggler" class="offcanvas offcanvas-{config.navbar.offcanvasAlign}{config.navbar.navbarExtraRow}" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
 	<div class="offcanvas-header pb-0">
 		<f:link.typolink class="navbar-brand me-0 me-{settings.config.navbarBreakpoint}-2" parameter="{config.general.homepageUid}">
@@ -290,7 +290,7 @@
 	<f:if condition="{config.navbar.navbarPlusicon}">
 		<f:then>
 			<f:render partial="Page/Navbar/Plusicon" arguments="{_all}" />
-			<a id="dropdown-menu-{navbarItem.data.uid}" href="{f:uri.page(pageUid: navbarItem.data.uid)}" data-href="{f:uri.page(pageUid: navbarItem.data.uid)}" class="nav-link btn btn-link text-nowrap{navbarItem.activeClass}">
+		<a id="dropdown-menu-{navbarItem.data.uid}" href="{f:uri.page(pageUid: navbarItem.data.uid)}" data-href="{f:uri.page(pageUid: navbarItem.data.uid)}" class="nav-link btn btn-link text-nowrap{navbarItem.activeClass}">
 				<f:render section="Title" arguments="{item: navbarItem}" />
 			</a>
 			<button type="button" class="nav-link ps-0 btn btn-link dropdown-toggle dropdown-toggle-split{f:if(condition: navbarItem.active, then:' --bs-dropdown-link-active-bg')}"
@@ -299,7 +299,8 @@
 			</button>
 		</f:then>
 		<f:else>
-		<a class="nav-link dropdown-toggle dropdown-item-{navbarItem.data.uid}{navbarItem.activeClass}"
+			<f:comment>level1</f:comment>
+			<a class="nav-link dropdown-toggle dropdown-item-{navbarItem.data.uid}{navbarItem.activeClass}"
 			id="dropdown-menu-{navbarItem.data.uid}"
 			href="{f:if(condition: config.navbar.clickableparent, then:'{f:uri.page(pageUid: navbarItem.data.uid)}', else:'#')}"
 			data-bs-toggle="{config.navbar.bstoggle}"
@@ -307,7 +308,7 @@
 			aria-expanded="false"
 			title="{navbarItem.title}"
 			{f:if(condition: navbarItem.current, then:' aria-current="page"')}>
-			<f:render section="Title" arguments="{item: navbarItem}" />
+	<span><f:render section="Title" arguments="{item: navbarItem}" /></span>
 		</a>
 		</f:else>
 	</f:if>
@@ -345,9 +346,11 @@
 					<f:else>
 						<f:if condition="{child.children}">
 							<f:then>
+
 								<f:render section="Subdropdown" arguments="{child: child, navbarBreakpoint: navbarBreakpoint, config: config}" />
 							</f:then>
 							<f:else>
+								<f:comment>level2/3 ohne Unterpunkten</f:comment>
 								<a class="dropdown-item dropdown-item-{child.data.uid}{child.activeClass}"
 									href="{child.link}"
 									title="{child.title -> f:format.raw()}"
@@ -379,12 +382,13 @@
 						</button>
 					</f:then>
 					<f:else>
+						<f:comment>level2/3 mit Unterpunkten</f:comment>
 						<a id="dropdown-layout-{child.data.uid}"
 							href="{f:if(condition: config.navbar.clickableparent, then:'{f:uri.page(pageUid: child.data.uid)}', else:'#')}"
 							class="has-submenu dropdown-item dropdown-toggle dropdown-item-{child.data.uid}{child.activeClass}"
 							data-bs-toggle="{config.navbar.bstoggle}" aria-haspopup="true" aria-expanded="false"
 							{f:if(condition: child.current, then:' aria-current="page"')}>
-							<f:render section="Title" arguments="{item: child}" />
+							<span><f:render section="Title" arguments="{item: child}" /></span>
 						</a>
 					</f:else>
 				</f:if>
