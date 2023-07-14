@@ -14,12 +14,30 @@ plugin.tx_kesearch_pi1.cssFile =
 plugin.tx_kesearch_pi2.cssFile =
 plugin.tx_kesearch_pi2.includeFilters = 1
 
+/*
 lib.searchbox_html = TEXT
 lib.searchbox_html.value (
-<form method="get" id="form_kesearch_searchfield" name="form_kesearch_searchfield" action="/suchen/">
+<form method="get" id="form_kesearch_searchfield" name="form_kesearch_searchfield" action="/suchen/">here
   <input class="form-control" type="text" id="ke_search_searchfield_sword" name="tx_kesearch_pi1[sword]" placeholder="Suchbegriff" />
 </form>
 )
+*/
 
-// The action “/suchen/” ist the slug of the page you created with your result list plugin.
 
+
+lib.searchbox_html = COA
+lib.searchbox_html {
+	10 < plugin.tx_kesearch_pi3
+
+	# result page
+	10.resultPage = 547
+
+	# CSS file
+	#10.cssFile = EXT:ke_search/Resources/Public/Css/ke_search_pi1.css
+
+	# Content element (search box plugin) from which additional
+	# configuration should be loaded (UID of content element).
+	# Important: If you have two search boxes on your result page
+	# (eg. in the top and in the left area), you should set this value!
+	# 10.loadFlexformsFromOtherCE = 123456
+}

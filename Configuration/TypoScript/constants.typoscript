@@ -6,3 +6,5 @@ bootstrap.navbar {
     # (int+) default breakpoints - same like Bootstrap (used as condition for inlineJS e.g. navbar hover)
 
 }
+plugin.tx_indexedsearch.settings.targetPid = 547
+bootstrap.ext.kesearch = 1
