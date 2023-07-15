@@ -139,15 +139,16 @@
             <p>
                 <span>Call</span> +49 2845 930-0
             </p>
-            <p>
-				<span><a href="mailto:info@test.de">Mail</a></span>
-            </p>
+            <div class="clearfix navbar-lang-wrap">
+                <p>
+                    <span><a href="mailto:info@test.de">Mail</a></span>
+                </p>
+                <f:render partial="Page/Navbar/LanguageMenu" arguments="{_all}"/>
+            </div>
 
-            <ul class="languagemenu horizontal" role="menu" aria-label="Language Choice">
-                <li class="active" role="none"><span role="menuitem" aria-disabled="true">DE</span></li>
-                <li class="" role="none"><a role="menuitem" href="/en/index.html" hreflang="en-US" title="EN">EN</a>
-                </li>
-            </ul>
+
+
+
 
             <f:comment><!--<f:if condition="{languageNavigation} && {config.lang.uid} && {config.lang.hreflang} && {config.lang.title}">
 			<f:render partial="Page/Navbar/Language" arguments="{_all}" />

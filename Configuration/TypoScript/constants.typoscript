@@ -1,10 +1,14 @@
+#siehe auch: Konstanten nicht im Konstanteneditor
+#https://www.t3sbootstrap.de/dokumentation/installation
+
 bootstrap.navbar {
     #image.defaultPath = /typo3conf/ext/t3sbootstrap/Resources/Public/Images/bootstrap-logo-white.svg
     image.width = 199
     image.height = 88
     image.altText = SCHWING Technologies
     # (int+) default breakpoints - same like Bootstrap (used as condition for inlineJS e.g. navbar hover)
-
 }
 plugin.tx_indexedsearch.settings.targetPid = 547
 bootstrap.ext.kesearch = 1
+#$processedData['config']['general']['company'] = !empty($company) ? trim($company) : 'Company Name';
+bootstrap.config.company = SCHWINN Technologies
