@@ -1,0 +1,17 @@
+lib.headerPhone = CONTENT
+lib.headerPhone.table = tt_content
+lib.headerPhone.select {
+
+    orderBy = sorting
+    where = colPos = 0
+	pidInList = 1210
+}
+
+lib.headerMail = CONTENT
+lib.headerMail.table = tt_content
+lib.headerMail.select {
+
+    orderBy = sorting
+    where = colPos = 0
+	pidInList = 1209
+}

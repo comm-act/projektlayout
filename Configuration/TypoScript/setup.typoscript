@@ -2,6 +2,7 @@
 #lib.contentElement.layoutRootPaths.100 = EXT:projektlayout/Resources/Private/Extensions/FluidStyledContent/Layouts/
 
 @import 'EXT:projektlayout/Configuration/TypoScript/Lib/main.typoscript'
+@import 'EXT:projektlayout/Configuration/TypoScript/Lib/lib.header.typoscript'
 @import 'EXT:projektlayout/Configuration/TypoScript/Extensions/ke_search/setup.typoscript'
 
 page.10.settings.kesearch.loaded = 1

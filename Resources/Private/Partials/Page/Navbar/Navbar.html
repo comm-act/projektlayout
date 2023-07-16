@@ -124,7 +124,7 @@
 <f:section name="RightMenu">
     <f:if condition="{config.navbar.searchbox} || {languageNavigation} || {navbarMenuRight -> f:count()} || {settings.config.navbarDarkMode}">
 
-        <div class="navbar-navnn flex-row flex-wrap ms-md-auto navbar-lang">
+        <div class="navbar-lang flex-row flex-wrap ms-md-auto">
             <f:if condition="{config.navbar.searchbox}">
                 <f:then>
                     <f:render partial="Page/Searchbox" arguments="{_all}"/>
@@ -136,29 +136,12 @@
                     </f:if>
                 </f:else>
             </f:if>
-            <p>
-                <span>Call</span> +49 2845 930-0
-            </p>
+            <f:cObject typoscriptObjectPath="lib.headerPhone"/>
             <div class="clearfix navbar-lang-wrap">
-                <p>
-                    <span><a href="mailto:info@test.de">Mail</a></span>
-                </p>
+                <f:cObject typoscriptObjectPath="lib.headerMail"/>
                 <f:render partial="Page/Navbar/LanguageMenu" arguments="{_all}"/>
             </div>
 
-
-
-
-
-            <f:comment><!--<f:if condition="{languageNavigation} && {config.lang.uid} && {config.lang.hreflang} && {config.lang.title}">
-			<f:render partial="Page/Navbar/Language" arguments="{_all}" />
-			<f:if condition="{navbarMenuRight -> f:count()}">
-				<div class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-					<div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
-					<hr class="d-lg-none my-2 text-white-50">
-				</div>
-			</f:if>
-		</f:if>--></f:comment>
             <f:if condition="{navbarMenuRight -> f:count()}">
                 <f:render partial="Page/Navbar/MenuRight" arguments="{_all}"/>
                 <f:if condition="{settings.config.navbarDarkMode}">
