@@ -360,7 +360,7 @@
 </f:section>
 
 <f:section name="DropdownItem">
-    <f:for each="{navbarItem.children}" as="child">
+    <f:for each="{navbarItem.children}" as="child" iteration="iterator">
         <f:if condition="{child.spacer}">
             <f:then>
                 <hr class="dropdown-divider">
@@ -379,7 +379,8 @@
                             </f:then>
                             <f:else>
                                 <f:comment>level2/3 ohne Unterpunkten</f:comment>
-                                <a class="dropdown-item dropdown-item-{child.data.uid}{child.activeClass}"
+                                <a
+                                    class="dropdown-item dropdown-item-{child.data.uid}{child.activeClass}{f:if(condition: 'iterator.isFirst', then:' first-item')}"
                                    href="{child.link}"
                                    title="{child.title -> f:format.raw()}"
                                    target="{child.target}"
@@ -414,7 +415,7 @@
                     </f:then>
                     <f:else>
                         <f:comment>level2/3 mit Unterpunkten</f:comment>
-                        <a id="dropdown-layout-{child.data.uid}"
+                       {iterator.index} <a id="dropdown-layout-{child.data.uid}"
                            href="{f:if(condition: config.navbar.clickableparent, then:'{f:uri.page(pageUid: child.data.uid)}', else:'#')}"
                            class="has-submenu dropdown-item dropdown-toggle dropdown-item-{child.data.uid}{child.activeClass}"
                            data-bs-toggle="{config.navbar.bstoggle}" aria-haspopup="true" aria-expanded="false"

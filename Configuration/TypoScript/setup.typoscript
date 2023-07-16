@@ -12,6 +12,10 @@ page.includeCSS {
 #   projektlayout.excludeFromConcatenation = 1
 }
 
+page.includeJSFooter {
+    global = EXT:projektlayout/Resources/Public/Scripts/global.js
+}
+
 config {  
 
 }
