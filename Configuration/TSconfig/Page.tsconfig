@@ -1,0 +1,8 @@
+TCEFORM {
+    tt_content {
+        CType {
+            ##remove content types, for all users incl. Admins
+            removeItems = text,textpic,div,bullets,image,menu_abstract,menu_categorized_pages,menu_categorized_content,menu_recently_updated,menu_related_pages,menu_sitemap,menu_subpages
+        }
+    }
+}
