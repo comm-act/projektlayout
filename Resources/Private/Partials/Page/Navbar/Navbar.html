@@ -94,8 +94,8 @@
         <f:if condition="{settings.config.navbarExtraRow}">
             <f:render partial="Page/Navbar/NavbarExtraRow" arguments="{_all}"/>
         </f:if>
-        <div class="offcanvas-body">
-            <div class="navbar-nav main-navbarnav{config.navbar.mauto}">
+        <div class="offcanvas-body justify-content-between">
+            <div class="navbar-nav main-navbarnav mx-auto mt-2 mt-lg-0">
                 <f:if condition="{navbarMenu} || {sectionMenu}">
                     <f:render section="NavbarNav" arguments="{_all}"/>
                 </f:if>
@@ -124,7 +124,7 @@
 <f:section name="RightMenu">
     <f:if condition="{config.navbar.searchbox} || {languageNavigation} || {navbarMenuRight -> f:count()} || {settings.config.navbarDarkMode}">
 
-        <div class="navbar-lang flex-row flex-wrap ms-md-auto">
+        <div class="navbar-lang">
             <f:if condition="{config.navbar.searchbox}">
                 <f:then>
                     <f:render partial="Page/Searchbox" arguments="{_all}"/>
