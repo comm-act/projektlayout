@@ -385,7 +385,7 @@
                                    title="{child.title -> f:format.raw()}"
                                    target="{child.target}"
                                    {f:if(condition: child.current, then:' aria-current="page"')}>
-                                <f:render section="Title" arguments="{item: child}"/>
+                                <span><f:render section="Title" arguments="{item: child}"/></span>
                                 </a>
                             </f:else>
                         </f:if>
@@ -405,7 +405,7 @@
                         <a id="dropdown-layout-{child.data.uid}" href="{f:uri.page(pageUid: child.data.uid)}"
                            data-href="{f:uri.page(pageUid: child.data.uid)}"
                            class="ps-3 py-1 btn btn-link text-nowrap text-start{child.activeClass}">
-                            <f:render section="Title" arguments="{item: child}"/>
+                            <span><f:render section="Title" arguments="{item: child}"/></span>
                         </a>
                         <button type="button"
                                 class="btn btn-link ps-0 dropdown-toggle dropdown-toggle-split{child.activeClass}"
@@ -420,7 +420,7 @@
                            class="has-submenu dropdown-item dropdown-toggle dropdown-item-{child.data.uid}{child.activeClass}"
                            data-bs-toggle="{config.navbar.bstoggle}" aria-haspopup="true" aria-expanded="false"
                            {f:if(condition: child.current, then:' aria-current="page"')}>
-                        <f:render section="Title" arguments="{item: child}"/>
+                       <span><f:render section="Title" arguments="{item: child}"/></span>
                         </a>
                     </f:else>
                 </f:if>
@@ -485,7 +485,7 @@
            href="{child.link}" title="{child.title -> f:format.raw()}"
            target="{grandchild.target}"
            {f:if(condition: child.current, then:' aria-current="page"')} >
-        <f:render section="Title" arguments="{item: child}"/>
+       <span><f:render section="Title" arguments="{item: child}"/></span>
         </a>
     </f:else>
     </f:if>
@@ -496,7 +496,7 @@
        href="{grandchild.link}" title="{grandchild.title -> f:format.raw()}"
        target="{grandchild.target}"
        {f:if(condition: grandchild.current, then:' aria-current="page"')}>
-    <f:render section="Title" arguments="{item: grandchild}"/>
+   <span><f:render section="Title" arguments="{item: grandchild}"/></span>
     </a>
 </f:section>
 
