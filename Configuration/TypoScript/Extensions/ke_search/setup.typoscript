@@ -5,10 +5,6 @@ plugin.tx_kesearch_pi1 {
 			#55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Templates/
 			10 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Templates/
 		}
-		partialRootPaths {
-			#55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Partials/
-			56 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Partials/
-		}
 	}
 }
 
@@ -17,10 +13,6 @@ plugin.tx_kesearch_pi3 {
 		templateRootPaths {
 			#55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Templates/
 			10 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Templates/
-		}
-		partialRootPaths {
-			#55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Partials/
-			56 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Partials/
 		}
 	}
 }
