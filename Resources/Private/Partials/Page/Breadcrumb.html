@@ -21,29 +21,7 @@
 
 
 <f:section name="Default">
-    <nav aria-label="breadcrumb" {f:if(condition:
-    '{config.breadcrumb.class}',then:' class="{config.breadcrumb.class}"')}>
-    <ol class="breadcrumb{config.breadcrumb.ol-class}">
-        <f:render section="Breadcrumb" arguments="{_all}"/>
-        <f:cObject typoscriptObjectPath="lib.newsTitle"/>
-    </ol>
-    </nav>
-</f:section>
-
-<f:section name="Inside">
-    <div class="container breadcrumb-wrap">
-        <nav aria-label="breadcrumb" {f:if(condition:
-        '{config.breadcrumb.class}',then:' class="{config.breadcrumb.class}"')}>
-            <ol class="breadcrumb{config.breadcrumb.ol-class}">
-                <f:render section="Breadcrumb" arguments="{_all}"/>
-                <f:cObject typoscriptObjectPath="lib.newsTitle"/>
-            </ol>
-        </nav>
-    </div>
-</f:section>
-
-<f:section name="Outside">
-    <div class="{config.breadcrumb.container}">
+    <div class="special-nav-area fix-top">
         <nav aria-label="breadcrumb" {f:if(condition:
         '{config.breadcrumb.class}',then:' class="{config.breadcrumb.class}"')}>
         <ol class="breadcrumb{config.breadcrumb.ol-class}">
@@ -51,7 +29,50 @@
             <f:cObject typoscriptObjectPath="lib.newsTitle"/>
         </ol>
         </nav>
+        <div class="ankernav-area"> 
+            <nav aria-label="ankernav" class="ankernav">
+                <ol class="ankernav">
+                    <f:cObject typoscriptObjectPath="lib.ankernav"/>
+                </ol>
+            </nav> 
+        </div>
     </div>
+</f:section>
+
+<f:section name="Inside">
+    <div class="special-nav-area fix-top">
+        <div class="container breadcrumb-wrap">
+            <nav aria-label="breadcrumb" {f:if(condition:
+            '{config.breadcrumb.class}',then:' class="{config.breadcrumb.class}"')}>
+                <ol class="breadcrumb{config.breadcrumb.ol-class}">
+                    <f:render section="Breadcrumb" arguments="{_all}"/>
+                    <f:cObject typoscriptObjectPath="lib.newsTitle"/>
+                </ol>
+            </nav>
+        </div>
+        <div class="ankernav-area"> 
+            <nav aria-label="ankernav" class="ankernav">
+                <ol class="ankernav">
+                    <f:cObject typoscriptObjectPath="lib.ankernav"/>
+                </ol>
+            </nav> 
+        </div>
+    </div>
+</f:section>
+
+<f:section name="Outside">
+    <div class="{config.breadcrumb.container} special-nav-area fix-top">
+        <nav aria-label="breadcrumb" {f:if(condition:
+        '{config.breadcrumb.class}',then:' class="{config.breadcrumb.class}"')}>
+        <ol class="breadcrumb{config.breadcrumb.ol-class}">
+            <f:render section="Breadcrumb" arguments="{_all}"/>
+            <f:cObject typoscriptObjectPath="lib.newsTitle"/>
+        </ol>
+        </nav>
+		<nav aria-label="ankernav" class="ankernav">
+			<f:cObject typoscriptObjectPath="lib.ankernav"/>
+		</nav> 
+	</div>
 </f:section>
 
 <f:section name="Breadcrumb">
