@@ -1,9 +1,21 @@
+/*
+plugin.tx_kesearch_pi1 {
+	view {
+		templateRootPaths {
+			55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Templates/
+		}
+		partialRootPaths {
+			55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Partials/
+		}
+	}
+}
+*/
 
 plugin.tx_kesearch_pi1 {
 	view {
 		templateRootPaths {
 			#55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Templates/
-			10 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Templates/
+			#66 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Templates/t3sbootstrap/
 		}
 	}
 }
@@ -12,7 +24,7 @@ plugin.tx_kesearch_pi3 {
 	view {
 		templateRootPaths {
 			#55 = EXT:t3sbootstrap/Resources/Private/Extensions/ke_search/Resources/Private/Templates/
-			10 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Templates/
+			66 =  EXT:projektlayout/Resources/Private/Extensions/KeSearch/Templates/orginal/
 		}
 	}
 }
@@ -36,7 +48,7 @@ lib.searchbox_html.value (
 
 lib.searchbox_html = COA
 lib.searchbox_html {
-	10 < plugin.tx_kesearch_pi3
+	10 < plugin.tx_kesearch_pi1
 
 	# result page
 	10.resultPage = 547
