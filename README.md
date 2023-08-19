@@ -1,1 +1,1 @@
-test readme php nadwsne new test
+test readme php nadwsne nsew test
