@@ -11,5 +11,10 @@ TCEFORM {
                }
            }
         }
+        tx_t3sbootstrap_sectionOrder {
+            types {
+                collapsible_accordion.disabled = 0
+            }
+        }
     }
 }
